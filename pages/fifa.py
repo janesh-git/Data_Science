@@ -21,16 +21,7 @@ st.image(img)
 
 df = pd.read_csv(DATA_PATH)
 st.dataframe(df)
-
-# transform the data to long-form format
-
-
-
-
 team = st.selectbox("Select the Team:", df['Teams'].unique())
-
-
-
 col1 , col2 = st.columns(2)
 fig_1 = px.histogram(df[df['Teams'] == team], x="Pts")
 col1.plotly_chart(fig_1, use_container_width=True)
